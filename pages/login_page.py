@@ -8,7 +8,7 @@ class LoginPage(BasePage):
     EMAIL_INPUT = (By.CLASS_NAME, "email")
     PASS_INPUT = (By.CLASS_NAME, "password")
     LOGIN_BUTTON = (By.CLASS_NAME, "login-button")
-    ERROR_MESSAGE_MAIN = (By.CLASS_NAME, "message-error")
+    ERROR_MESSAGE_MAIN = (By.CSS_SELECTOR, "div.message-error")
     ERROR_MESSAGE_EMAIL = (By.ID, "Email-error")
     FORGOT_PASSWORD_LINK = (By.XPATH, "//a[text()='Forgot password?']")
 

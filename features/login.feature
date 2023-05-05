@@ -1,5 +1,6 @@
 Feature: Test the functionality of the Login Page
 
+  @simple
   #Scenariu_Curs fara parametru
   Scenario: Check that "No customer account found" message is displayed when the user tries to log in with an unregistered email
     Given I am on the Login Page
@@ -9,6 +10,7 @@ Feature: Test the functionality of the Login Page
     Then The main error message is displayed
     Then The error text contains "No customer account found" message
 
+  @parameterized
   #Scenariu_Curs cu parametru
   Scenario: Check that "No customer account found" message is displayed when the user tries to log in with an unregistered email
     Given I am on the Login Page
@@ -18,14 +20,16 @@ Feature: Test the functionality of the Login Page
     Then The main error message is displayed
     Then The error text contains "No customer account found"
 
+  @parameterized
    #Scenariu1_Tema
     Scenario: Check that “Please enter your email” message is displayed when the user enters empty email address:
       Given I am on the Login Page
       When I insert " " in the email input
       When I click on the login button
       Then The email error message is displayed
-      Then The error text contains "Please enter your email"
+      Then The error message text contains "Please enter your email"
 
+    @parameterized
       #Scenariu2_Tema
       Scenario: Check that “Wrong email” message is displayed when the user enters an email address with an invalid format
         Given I am on the Login Page
@@ -34,6 +38,7 @@ Feature: Test the functionality of the Login Page
         Then The email error message is displayed
         Then The email error message text contains "Wrong email"
 
+      @simple
        #Scenariu3_Tema
       Scenario: Check that the URL is correct
         Given I am on the Login Page
