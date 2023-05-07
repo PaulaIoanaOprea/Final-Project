@@ -1,4 +1,6 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions, wait
+from selenium.webdriver.support.wait import WebDriverWait
 
 from pages.base_page import BasePage
 
@@ -96,8 +98,10 @@ class RegisterPage(BasePage):
     def is_register_success_message_displayed(self):
         return self.is_element_displayed(self.REGISTER_MESSAGE)
 
+    def is_continue_button_displayed(self):
+        return self.is_element_displayed(self.CONTINUE_BUTTON)
+
     def get_register_success_message_text(self):
+        self.wait_for_element_to_be_present(self.REGISTER_MESSAGE, 3)
         return self.get_element_text(self.REGISTER_MESSAGE)
 
-    def click_on_continue_button(self):
-        self.click(self.CONTINUE_BUTTON)

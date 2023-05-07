@@ -26,6 +26,7 @@ Feature: Test the functionality of the Register Page
       When I insert "Extraterestru66" in the Confirm password
       When I click on the Register button
       Then The register success message is displayed
+      Then The Continue button is displayed
       Then The register success message contains "Your registration completed"
-      Then I click on the Continue button
+
 

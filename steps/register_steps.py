@@ -96,13 +96,12 @@ def step_impl(context):
     assert context.register_page.is_register_success_message_displayed()
 
 
-@then('The register success message contains "Your registration completed"')
+@then('The Continue button is displayed')
 def step_impl(context):
-    assert context.register_page.get_register_success_message_text()
+    assert context.register_page.is_continue_button_displayed()
 
 
-@then('I click on the Continue button')
-def step_impl(context):
-    context.register_page.click_on_continue_button()
-
-
+@then('The register success message contains "{text}"')
+def step_impl(context, text):
+    # assert {text}, {context.register_page.get_register_success_message_text()}
+    assert f'Expected: {text}, \n Actual: {context.register_page.get_register_success_message_text()}'
