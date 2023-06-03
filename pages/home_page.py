@@ -1,4 +1,4 @@
-from pages.base_page import BasePage
+from Final_Project.pages.base_page import BasePage
 
 
 class HomePage(BasePage):
