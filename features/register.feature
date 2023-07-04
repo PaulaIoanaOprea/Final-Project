@@ -29,4 +29,20 @@ Feature: Test the functionality of the Register Page
       Then The Continue button is displayed
       Then The register success message contains "Your registration completed"
 
+       @parameterized
+  Scenario: Check that entering a wrong email format gives an email error message
+      When I select Female Gender
+      When I enter "Paula Ioana" in the First name
+      When I enter "Oprea" in the Last name
+      When I select Day "9" in the Date of birth
+      When I select Month "April" in the Date of birth
+      When I select Year "1991" in the Date of birth
+      When I enter "email" in the Email
+      When I enter "OZN" in the Company
+      When I uncheck the Newsletter
+      When I insert "Extraterestru66" in the Password
+      When I insert "Extraterestru66" in the Confirm password
+      When I click on the Register button
+      Then The email error text contains "Wrong email"
+
 

@@ -3,7 +3,7 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
 
-from Final_Project.browser import Browser
+from browser import Browser
 from unittest import TestCase as Assert
 
 

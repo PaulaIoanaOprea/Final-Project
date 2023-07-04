@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions, wait
 from selenium.webdriver.support.wait import WebDriverWait
 
-from Final_Project.pages.base_page import BasePage
+from pages.base_page import BasePage
 
 
 class RegisterPage(BasePage):
@@ -104,4 +104,7 @@ class RegisterPage(BasePage):
     def get_register_success_message_text(self):
         self.wait_for_element_to_be_present(self.REGISTER_MESSAGE, 3)
         return self.get_element_text(self.REGISTER_MESSAGE)
+
+    def get_email_error_text(self):
+        return self.get_element_text(self.EMAIL_ERROR)
 

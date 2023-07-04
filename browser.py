@@ -4,7 +4,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 
 class Browser:
-
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service)
     driver.maximize_window()

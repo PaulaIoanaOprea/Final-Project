@@ -105,3 +105,8 @@ def step_impl(context):
 def step_impl(context, text):
     # assert {text}, {context.register_page.get_register_success_message_text()}
     assert f'Expected: {text}, \n Actual: {context.register_page.get_register_success_message_text()}'
+
+
+@then('The email error text contains "{text}"')
+def step_impl(context, text):
+    assert f'Expected: {text}, \n Actual: {context.register_page.get_email_error_text()}'
