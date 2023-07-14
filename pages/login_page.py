@@ -40,12 +40,14 @@ class LoginPage(BasePage):
         self.click(self.FORGOT_PASSWORD_LINK)
 
     def is_main_error_message_displayed(self):
+        assert self.is_element_displayed(self.ERROR_MESSAGE_MAIN)
         return self.is_element_displayed(self.ERROR_MESSAGE_MAIN)
 
     def get_main_error_message_text(self):
         return self.get_element_text(self.ERROR_MESSAGE_MAIN)
 
     def is_email_error_message_displayed(self):
+        assert self.is_element_displayed(self.ERROR_MESSAGE_EMAIL)
         return self.is_element_displayed(self.ERROR_MESSAGE_EMAIL)
 
     def get_email_error_message_text(self):
@@ -53,6 +55,7 @@ class LoginPage(BasePage):
 
     # se foloseste pentru pasul BDD fara parametri
     def is_no_customer_account_found_message_displayed(self):
+        assert self.get_main_error_message_text()
         return "No customer account found" in self.get_main_error_message_text()
 
 

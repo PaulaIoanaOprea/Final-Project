@@ -81,24 +81,31 @@ class RegisterPage(BasePage):
         self.click(self.REGISTER_BUTTON)
 
     def is_first_name_error_displayed(self):
+        assert self.is_element_displayed(self.FIRST_NAME_ERROR)
         return self.is_element_displayed(self.FIRST_NAME_ERROR)
 
     def is_last_name_error_displayed(self):
+        assert self.is_element_displayed(self.LAST_NAME_ERROR)
         return self.is_element_displayed(self.LAST_NAME_ERROR)
 
     def is_email_error_displayed(self):
+        assert self.is_element_displayed(self.EMAIL_ERROR)
         return self.is_element_displayed(self.EMAIL_ERROR)
 
     def is_password_error_displayed(self):
+        assert self.is_element_displayed(self.PASSWORD_ERROR)
         return self.is_element_displayed(self.PASSWORD_ERROR)
 
     def is_password_confirm_error_displayed(self):
+        assert self.is_element_displayed(self.CONFORM_PASSWORD_ERROR)
         return self.is_element_displayed(self.CONFORM_PASSWORD_ERROR)
 
     def is_register_success_message_displayed(self):
+        assert self.is_element_displayed(self.REGISTER_MESSAGE)
         return self.is_element_displayed(self.REGISTER_MESSAGE)
 
     def is_continue_button_displayed(self):
+        assert self.is_element_displayed(self.CONTINUE_BUTTON)
         return self.is_element_displayed(self.CONTINUE_BUTTON)
 
     def get_register_success_message_text(self):

@@ -51,6 +51,7 @@ class BasePage(Browser):
         self.find(locator).send_keys(text)
 
     def is_element_displayed(self, locator):
+        assert self.driver.find_element(*locator).is_displayed()
         return self.find(locator).is_displayed()
 
     # Returneaza textul de pe un Web Element
@@ -65,9 +66,11 @@ class BasePage(Browser):
 
     # Va returna True daca expected_url este egal cu URL-ul paginii din care apelam metoda
     def is_url_corect(self, expected_url):
+        assert expected_url == self.driver.current_url
         return expected_url == self.driver.current_url
 
     def is_element_present(self, locator):
+        assert len(self.driver.find_elements(*locator)) > 0
         return len(self.driver.find_elements(*locator)) > 0
 
     """

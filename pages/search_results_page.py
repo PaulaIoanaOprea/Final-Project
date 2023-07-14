@@ -25,3 +25,4 @@ class SearchResultsPage(BasePage):
                 return False
 
         return True
+
